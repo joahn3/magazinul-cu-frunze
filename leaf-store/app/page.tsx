@@ -1,6 +1,7 @@
+// app/page.tsx
 "use client";
 import React from 'react';
-import { ShoppingBag, ArrowRight, Target } from 'lucide-react';
+import { ShoppingBag, ArrowRight, Target, Building2, Calendar } from 'lucide-react';
 import Link from 'next/link';
 
 const LeafStore = () => {
@@ -88,7 +89,7 @@ const LeafStore = () => {
             iar tu asiguri stocul real prin donații transparente.
           </p>
           
-          {/* OBIECTIV PILOT (Nou adaugat) */}
+          {/* OBIECTIV PILOT */}
           <div className="max-w-md mx-auto bg-white p-4 rounded-2xl shadow-lg border border-leaf/20 mb-10 relative overflow-hidden">
              <div className="flex items-center justify-between mb-2">
                 <div className="flex items-center gap-2 text-forest font-bold">
@@ -112,9 +113,9 @@ const LeafStore = () => {
               <ShoppingBag size={20} />
               Umple un Raft
             </Link>
-            <a href="/povestea/" className="px-8 py-4 bg-white hover:bg-paper text-forest border border-slate-200 rounded-full font-bold text-lg transition flex items-center justify-center gap-2">
+            <Link href="/povestea" className="px-8 py-4 bg-white hover:bg-paper text-forest border border-slate-200 rounded-full font-bold text-lg transition flex items-center justify-center gap-2">
               Vezi Povestea
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -297,6 +298,48 @@ const LeafStore = () => {
             </Link>
           </div>
         </div>
+      </div>
+
+      {/* NEW SECTION: MAI MULTE MODURI DE A AJUTA */}
+      <div className="py-20 bg-white border-t border-slate-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                  <h2 className="text-3xl md:text-4xl font-heading font-bold text-forest">Mai multe moduri de a ajuta</h2>
+                  <p className="mt-4 text-slate-600">Nu poți dona acum? Nicio problemă. Poți direcționa taxele pe care le plătești deja.</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                  
+                  {/* Card Companii */}
+                  <Link href="/sponsorizari" className="group relative bg-paper rounded-3xl p-8 border border-slate-100 hover:border-forest/30 hover:shadow-xl transition-all duration-300">
+                      <div className="absolute top-8 right-8 bg-white p-3 rounded-full shadow-sm text-forest group-hover:bg-forest group-hover:text-white transition-colors">
+                          <Building2 size={24} />
+                      </div>
+                      <h3 className="text-2xl font-heading font-bold text-forest mb-4">Pentru Companii</h3>
+                      <p className="text-slate-600 mb-8 leading-relaxed">
+                          Direcționează 20% din impozitul pe profit către cauze sociale. Este 100% deductibil și nu costă firma nimic în plus.
+                      </p>
+                      <div className="flex items-center text-leaf font-bold group-hover:text-forest transition-colors">
+                          Descarcă Contractul <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                  </Link>
+
+                  {/* Card 3.5% */}
+                  <Link href="/redirectioneaza" className="group relative bg-paper rounded-3xl p-8 border border-slate-100 hover:border-forest/30 hover:shadow-xl transition-all duration-300">
+                      <div className="absolute top-8 right-8 bg-white p-3 rounded-full shadow-sm text-forest group-hover:bg-forest group-hover:text-white transition-colors">
+                          <Calendar size={24} />
+                      </div>
+                      <h3 className="text-2xl font-heading font-bold text-forest mb-4">Formularul 230</h3>
+                      <p className="text-slate-600 mb-8 leading-relaxed">
+                          Redirecționează 3.5% din impozitul pe venit. Banii sunt deja la stat – tu doar le spui să ajungă la copii.
+                      </p>
+                      <div className="flex items-center text-leaf font-bold group-hover:text-forest transition-colors">
+                          Descarcă Formularul <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                  </Link>
+
+              </div>
+          </div>
       </div>
 
       {/* CTA FINAL */}
