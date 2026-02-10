@@ -1,8 +1,6 @@
 // app/layout.tsx
 import './globals.css'
 import type { Metadata } from 'next'
-// Nota: Fonturile sunt gestionate acum global in globals.css prin @import, 
-// dar pastram Inter ca fallback sau putem sterge importul daca globals.css e incarcat corect.
 import { Leaf, MapPin } from 'lucide-react'; 
 import Navbar from './components/Navbar'; 
 
@@ -29,15 +27,13 @@ export default function RootLayout({
         </div>
 
         {/* --- GLOBAL FOOTER --- */}
-        {/* Conform Brand DNA: Footer-ul este Earth Brown (#78350f) */}
         <footer className="bg-earth text-amber-50/80 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
               
-              {/* Coloana 1: Brand */}
+              {/* Coloana 1: Brand (Lata - ocupa 2 coloane) */}
               <div className="col-span-1 md:col-span-2">
                 <div className="flex items-center gap-2 mb-6">
-                  {/* Logo alb/leaf pe fundal maro */}
                   <Leaf className="h-6 w-6 text-leaf" />
                   <span className="font-heading font-bold text-2xl text-white">Magazinul cu Frunze</span>
                 </div>
@@ -45,30 +41,44 @@ export default function RootLayout({
                   Un proiect social care combate sărăcia prin educație și demnitate.
                   Transformăm frunzele în monedă de schimb pentru copiii care au nevoie de noi.
                 </p>
+                <div className="mt-6 flex gap-4">
+                  <a href="/povestea" className="text-white font-bold border-b border-leaf hover:text-gold transition-colors">
+                    Citește Povestea Noastră
+                  </a>
+                </div>
               </div>
 
-              {/* Coloana 2: Link-uri */}
+              {/* Coloana 2: Susține & Legal */}
               <div>
-                <h4 className="font-heading font-bold text-white text-lg mb-6">Link-uri utile</h4>
+                <h4 className="font-heading font-bold text-white text-lg mb-6">Implică-te</h4>
                 <ul className="space-y-3 text-sm font-medium">
                   <li>
-                    <a href="/implica-te" className="hover:text-gold transition-colors duration-200 flex items-center gap-2">
+                    <a href="/sponsorizari" className="hover:text-gold transition-colors duration-200 flex items-center gap-2">
+                      <span className="text-leaf">●</span> Sponsorizează (Firme)
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/redirectioneaza" className="hover:text-gold transition-colors duration-200 flex items-center gap-2">
+                      <span className="text-leaf">●</span> Redirecționează 3.5%
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/implica-te" className="hover:text-gold transition-colors duration-200">
                       Devino Voluntar
                     </a>
                   </li>
-                  <li>
-                    <a href="/transparenta" className="hover:text-gold transition-colors duration-200">
+                  <li className="pt-4 border-t border-amber-900/30 mt-4">
+                     <a href="/transparenta" className="hover:text-white transition-colors duration-200 opacity-70 hover:opacity-100">
                       Raport Transparență
                     </a>
                   </li>
-                  <li>
-                    <a href="/termeni" className="hover:text-gold transition-colors duration-200">
+                   <li>
+                    <a href="/termeni" className="hover:text-white transition-colors duration-200 opacity-70 hover:opacity-100">
                       Termeni și condiții
                     </a>
                   </li>
-                  {/* LINK NOU ADAUGAT */}
                   <li>
-                    <a href="/confidentialitate" className="hover:text-gold transition-colors duration-200">
+                    <a href="/confidentialitate" className="hover:text-white transition-colors duration-200 opacity-70 hover:opacity-100">
                       Politica de confidențialitate
                     </a>
                   </li>
