@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from 'react';
 import { Leaf, Heart, ShoppingBag, MapPin, ArrowRight, Menu, X } from 'lucide-react';
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const LeafStore = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
