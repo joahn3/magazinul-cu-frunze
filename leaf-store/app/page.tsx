@@ -57,10 +57,10 @@ const LeafStore = () => {
                 1. Salveaza imaginea cu "mainile si painea pe masa" ca 'hero-bg.jpg' in folderul /public
                 2. Decomenteaza linia de mai jos:
             */}
-            <img src="/public/hero-bg.jpg" className="w-full h-full object-cover opacity-20" alt="Sat romanesc" />
+            <img src="/hero-bg.jpg" className="w-full h-full object-cover opacity-20" alt="Sat romanesc" />
 
             {/* Fallback gradient daca nu e poza */}
-            <div className="absolute inset-0 bg-gradient-to-br from-paper via-white to-green-50 opacity-90"></div>
+            {/* <div className="absolute inset-0 bg-gradient-to-br from-paper via-white to-green-50 opacity-90"></div> */}
 
             {/* Elemente decorative abstracte */}
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-gold/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
