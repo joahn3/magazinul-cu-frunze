@@ -24,30 +24,35 @@ export default function Navbar() {
             </Link>
           </div>
           
-          {/* DESKTOP MENU (Ascuns pe mobil) */}
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/#cum-functioneaza" className="text-slate-600 hover:text-forest font-bold transition-colors">
-              Cum funcționează
-            </Link>
+          {/* DESKTOP MENU (Ascuns pe mobil și tablete - lg:flex) */}
+          <div className="hidden lg:flex items-center space-x-6">
             <Link href="/povestea" className="text-slate-600 hover:text-forest font-bold transition-colors">
               Povestea
             </Link>
-            <Link href="/donatii" className="text-slate-600 hover:text-forest font-bold transition-colors">
-              Donații
+            
+            {/* Link-uri Noi */}
+            <Link href="/sponsorizari" className="text-slate-600 hover:text-forest font-bold transition-colors">
+              Sponsorizări
             </Link>
+            <Link href="/redirectioneaza" className="text-slate-600 hover:text-forest font-bold transition-colors">
+              3.5%
+            </Link>
+
             <Link href="/implica-te" className="text-slate-600 hover:text-forest font-bold transition-colors">
               Voluntari
             </Link>
             <Link href="/contact" className="text-slate-600 hover:text-forest font-bold transition-colors">
               Contact
             </Link>
+
+            {/* Buton CTA Principal */}
             <Link href="/donatii" className="bg-forest hover:bg-leaf text-white px-6 py-2.5 rounded-full font-bold transition-all shadow-lg shadow-forest/20 hover:shadow-leaf/30 transform hover:-translate-y-0.5">
               Donează
             </Link>
           </div>
 
-          {/* MOBILE MENU BUTTON (Vizibil doar pe mobil) */}
-          <div className="md:hidden flex items-center">
+          {/* MOBILE MENU BUTTON (Vizibil pe mobil și tablete - lg:hidden) */}
+          <div className="lg:hidden flex items-center">
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)} 
               className="text-forest p-2 hover:bg-leaf/10 rounded-lg transition-colors"
@@ -60,8 +65,15 @@ export default function Navbar() {
 
       {/* MOBILE MENU DROPDOWN */}
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-slate-100 absolute w-full shadow-xl">
+        <div className="lg:hidden bg-white border-t border-slate-100 absolute w-full shadow-xl max-h-[90vh] overflow-y-auto">
           <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col font-heading">
+            <Link 
+              href="/povestea" 
+              onClick={() => setIsMenuOpen(false)} 
+              className="block px-4 py-3 text-slate-600 font-bold hover:bg-paper hover:text-forest rounded-xl transition-colors"
+            >
+              Povestea Noastră
+            </Link>
             <Link 
               href="/#cum-functioneaza" 
               onClick={() => setIsMenuOpen(false)} 
@@ -69,13 +81,26 @@ export default function Navbar() {
             >
               Cum funcționează
             </Link>
+            
+            <div className="my-2 border-t border-slate-100"></div>
+            
             <Link 
-              href="/donatii" 
+              href="/sponsorizari" 
               onClick={() => setIsMenuOpen(false)} 
               className="block px-4 py-3 text-slate-600 font-bold hover:bg-paper hover:text-forest rounded-xl transition-colors"
             >
-              Donații
+              Sponsorizări (Firme)
             </Link>
+            <Link 
+              href="/redirectioneaza" 
+              onClick={() => setIsMenuOpen(false)} 
+              className="block px-4 py-3 text-slate-600 font-bold hover:bg-paper hover:text-forest rounded-xl transition-colors"
+            >
+              Redirecționează 3.5%
+            </Link>
+            
+            <div className="my-2 border-t border-slate-100"></div>
+
             <Link 
               href="/implica-te" 
               onClick={() => setIsMenuOpen(false)} 
