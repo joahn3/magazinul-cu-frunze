@@ -49,7 +49,7 @@ const LeafStore = () => {
 
   return (
     <div className="font-body text-slate-700 bg-paper">
-      
+
       {/* HERO SECTION */}
       <div className="relative pt-20 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -57,11 +57,11 @@ const LeafStore = () => {
                 1. Salveaza imaginea cu "mainile si painea pe masa" ca 'hero-bg.jpg' in folderul /public
                 2. Decomenteaza linia de mai jos:
             */}
-            {/* <img src="/hero-bg.jpg" className="w-full h-full object-cover opacity-20" alt="Sat romanesc" /> */}
-            
+            <img src="/hero-bg.jpeg" className="w-full h-full object-cover opacity-20" alt="Sat romanesc" />
+
             {/* Fallback gradient daca nu e poza */}
             <div className="absolute inset-0 bg-gradient-to-br from-paper via-white to-green-50 opacity-90"></div>
-            
+
             {/* Elemente decorative abstracte */}
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-gold/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
             <div className="absolute top-0 left-0 -ml-20 -mt-20 w-96 h-96 bg-leaf/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
@@ -72,7 +72,7 @@ const LeafStore = () => {
             <span className="flex h-2 w-2 rounded-full bg-leaf mr-2"></span>
             Proiect Pilot: Lansare în Iunie 2026
           </div>
-          
+
           <h1 className="text-5xl md:text-7xl font-heading font-extrabold text-forest tracking-tight mb-8 leading-tight">
             La noi, banii cresc <br />
             <span className="text-leaf relative inline-block">
@@ -83,12 +83,12 @@ const LeafStore = () => {
               </svg>
             </span>
           </h1>
-          
+
           <p className="mt-6 max-w-2xl mx-auto text-xl text-slate-600 mb-10 leading-relaxed">
-            Primul lanț de magazine din România unde copiii vulnerabili "plătesc" cu frunze, 
+            Primul lanț de magazine din România unde copiii vulnerabili "plătesc" cu frunze,
             iar tu asiguri stocul real prin donații transparente.
           </p>
-          
+
           {/* OBIECTIV PILOT */}
           <div className="max-w-md mx-auto bg-white p-4 rounded-2xl shadow-lg border border-leaf/20 mb-10 relative overflow-hidden">
              <div className="flex items-center justify-between mb-2">
@@ -100,8 +100,8 @@ const LeafStore = () => {
              </div>
              {/* Bara Progres */}
              <div className="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
-                <div 
-                    className="bg-gradient-to-r from-leaf to-forest h-3 rounded-full transition-all duration-1000 ease-out" 
+                <div
+                    className="bg-gradient-to-r from-leaf to-forest h-3 rounded-full transition-all duration-1000 ease-out"
                     style={{ width: `${progressPercent}%` }}
                 ></div>
              </div>
@@ -155,11 +155,11 @@ const LeafStore = () => {
               </h2>
               <div className="prose prose-lg text-slate-600 space-y-6">
                 <p>
-                  Îți amintești când erai mic? Adunai frunze de nuc, pietre de râu sau petale de flori și le transformai în cea mai valoroasă monedă din lume. 
+                  Îți amintești când erai mic? Adunai frunze de nuc, pietre de râu sau petale de flori și le transformai în cea mai valoroasă monedă din lume.
                   <span className="font-bold text-forest"> "Asta costă 2 frunze"</span>, spuneai. Și jocul era magic.
                 </p>
                 <p>
-                  Pentru mii de copii din satele României, însă, lipsurile nu sunt o joacă. Sărăcia le fură nu doar mâncarea de pe masă, ci și demnitatea. 
+                  Pentru mii de copii din satele României, însă, lipsurile nu sunt o joacă. Sărăcia le fură nu doar mâncarea de pe masă, ci și demnitatea.
                   Să primești "de pomană" poate fi rușinos.
                 </p>
                 <blockquote className="border-l-4 border-leaf pl-4 italic text-forest bg-white py-4 px-4 rounded-r-lg shadow-sm">
@@ -169,10 +169,10 @@ const LeafStore = () => {
                   Fiecare donație a ta devine un produs pe raft. Fiecare frunză a lor devine un zâmbet demn.
                 </p>
               </div>
-              
+
               <div className="mt-8">
                  <Link href="/transparenta" className="flex items-center text-leaf font-bold hover:text-forest transition-colors group">
-                    Vezi Rapoartele de Transparență 
+                    Vezi Rapoartele de Transparență
                     <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform"/>
                  </Link>
               </div>
@@ -188,7 +188,7 @@ const LeafStore = () => {
                 */}
                 <div className="aspect-[4/5] bg-slate-200 w-full object-cover relative group">
                     {/* <img src="/poveste-copil.jpg" alt="Copil cu frunza" className="w-full h-full object-cover" /> */}
-                    
+
                     {/* Placeholder Temporar */}
                     <div className="absolute inset-0 flex items-center justify-center text-slate-400 bg-slate-100 flex-col gap-2">
                         <span>Inserare Imagine:</span>
@@ -196,7 +196,7 @@ const LeafStore = () => {
                     </div>
                 </div>
               </div>
-              
+
               {/* Decorative Elements */}
               <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-leaf/20 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
               <div className="absolute -top-10 -right-10 w-40 h-40 bg-gold/20 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
@@ -208,7 +208,7 @@ const LeafStore = () => {
       {/* HOW IT WORKS */}
       <div id="cum-functioneaza" className="py-24 bg-white relative">
         <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'radial-gradient(#166534 1px, transparent 1px)', backgroundSize: '24px 24px'}}></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-forest">Cum funcționează magia?</h2>
@@ -291,7 +291,7 @@ const LeafStore = () => {
               </div>
             ))}
           </div>
-          
+
           <div className="mt-12 text-center md:hidden">
             <Link href="/donatii" className="inline-flex text-leaf font-bold hover:text-forest items-center">
                 Vezi toate opțiunile <ArrowRight className="ml-2 h-4 w-4"/>
@@ -309,7 +309,7 @@ const LeafStore = () => {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                  
+
                   {/* Card Companii */}
                   <Link href="/sponsorizari" className="group relative bg-paper rounded-3xl p-8 border border-slate-100 hover:border-forest/30 hover:shadow-xl transition-all duration-300">
                       <div className="absolute top-8 right-8 bg-white p-3 rounded-full shadow-sm text-forest group-hover:bg-forest group-hover:text-white transition-colors">
