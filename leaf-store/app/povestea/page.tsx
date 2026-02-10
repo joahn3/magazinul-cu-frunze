@@ -5,12 +5,12 @@ import Link from 'next/link';
 export default function Povestea() {
   return (
     <div className="bg-paper min-h-screen font-body">
-      
+
       {/* HERO SECTION - Manifestul */}
       <div className="relative pt-24 pb-24 lg:pt-32 lg:pb-32 overflow-hidden bg-forest text-white text-center px-4">
         {/* Pattern subtil fundal */}
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]"></div>
-        
+
         <div className="relative z-10 max-w-4xl mx-auto">
           <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-leaf/20 border border-leaf/40 text-green-100 text-sm font-bold mb-8">
             <span className="mr-2">🍂</span> Manifestul Nostru
@@ -20,7 +20,7 @@ export default function Povestea() {
             Dar nu trebuie să fure <span className="text-leaf">demnitatea</span>.
           </h1>
           <p className="text-lg md:text-2xl text-green-50 max-w-2xl mx-auto leading-relaxed font-light">
-            Am creat un univers în care nu există "pomană", ci doar o monedă diferită. 
+            Am creat un univers în care nu există "pomană", ci doar o monedă diferită.
             La noi, copiii nu primesc degeaba. Ei sunt clienți respectați.
           </p>
         </div>
@@ -35,18 +35,18 @@ export default function Povestea() {
             </h2>
             <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
               <p>
-                "Pomana" poate fi umilitoare. Cozile la alimente pot fi traumatizante pentru un copil de 7 ani. 
+                "Pomana" poate fi umilitoare. Cozile la alimente pot fi traumatizante pentru un copil de 7 ani.
                 El învață că trebuie să stea cu mâna întinsă.
               </p>
               <p className="font-bold text-forest">
                 Noi am schimbat regulile.
               </p>
               <p>
-                Transformăm ajutorul social într-un joc. Copilul pleacă acasă mândru că a făcut "cumpărături", 
+                Transformăm ajutorul social într-un joc. Copilul pleacă acasă mândru că a făcut "cumpărături",
                 nu rușinat că a primit de milă. Învățăm demnitate și responsabilitate prin puterea jocului.
               </p>
             </div>
-            
+
             <div className="mt-8 grid grid-cols-2 gap-4">
                 <div className="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
                     <div className="text-forest font-bold font-heading text-xl mb-1">1 Frunză de Nuc</div>
@@ -58,17 +58,17 @@ export default function Povestea() {
                 </div>
             </div>
           </div>
-          
+
           {/* Imagine Concept */}
           <div className="relative">
              <div className="absolute inset-0 bg-gold/20 rounded-3xl transform rotate-3"></div>
              {/* INSTRUCTIUNI IMAGINE: Copil tinand o frunza la ochi (portrait) */}
-             <div className="relative bg-slate-200 rounded-3xl overflow-hidden aspect-[4/5] shadow-xl">
-                {/* <img src="/poveste-copil.jpg" className="w-full h-full object-cover" /> */}
-                <div className="absolute inset-0 flex items-center justify-center text-slate-400 bg-slate-100 flex-col gap-2">
+             <div className="relative bg-slate-200 rounded-3xl overflow-hidden aspect-4/5] shadow-xl">
+                <img src="/poveste-copil.jpg" className="w-full h-full object-cover" />
+                {/* <div className="absolute inset-0 flex items-center justify-center text-slate-400 bg-slate-100 flex-col gap-2">
                     <span>Imagine Copil</span>
                     <code className="text-xs">poveste-copil.jpg</code>
-                </div>
+                </div> */}
              </div>
           </div>
         </div>
@@ -128,10 +128,10 @@ export default function Povestea() {
             Viziunea noastră?
         </h2>
         <p className="text-xl text-slate-600 mb-12 leading-relaxed">
-            Vrem să deschidem o rețea națională de "Magazine cu Frunze" în cele mai izolate 100 de sate din România. 
+            Vrem să deschidem o rețea națională de "Magazine cu Frunze" în cele mai izolate 100 de sate din România.
             Vrem o comunitate de donatori care înțeleg că <span className="font-bold text-forest">educația începe cu demnitatea</span>.
         </p>
-        
+
         <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/donatii" className="px-10 py-4 bg-forest hover:bg-forest-hover text-white rounded-full font-bold text-lg transition shadow-xl shadow-green-900/10 flex items-center justify-center gap-2 transform hover:-translate-y-1">
               <Heart size={20} className="fill-current" />
