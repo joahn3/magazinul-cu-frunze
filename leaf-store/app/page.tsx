@@ -3,6 +3,7 @@
 import React from 'react';
 import { ShoppingBag, ArrowRight, Target, Building2, Calendar } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const LeafStore = () => {
 
@@ -57,7 +58,13 @@ const LeafStore = () => {
                 1. Salveaza imaginea cu "mainile si painea pe masa" ca 'hero-bg.jpg' in folderul /public
                 2. Decomenteaza linia de mai jos:
             */}
-            <img src="/hero-bg.jpg" className="w-full h-full object-cover opacity-20" alt="Sat romanesc" />
+            <Image
+              src="/hero-bg.jpg"
+              alt="Sat romanesc"
+              fill
+              className="object-cover opacity-20"
+              priority
+            />
 
             {/* Fallback gradient daca nu e poza */}
             {/* <div className="absolute inset-0 bg-gradient-to-br from-paper via-white to-green-50 opacity-90"></div> */}
@@ -187,7 +194,13 @@ const LeafStore = () => {
                    2. Sterge div-ul placeholder si activeaza img-ul de mai jos:
                 */}
                 <div className="aspect-4/5] bg-slate-200 w-full object-cover relative group">
-                    <img src="/poveste-copil.jpg" alt="Copil cu frunza" className="w-full h-full object-cover" />
+                    {/* UPDATED: Folosim Next.js Image component cu fill */}
+                    <Image
+                      src="/poveste-copil.jpg"
+                      alt="Copil cu frunza"
+                      fill
+                      className="object-cover"
+                    />
 
                     {/* Placeholder Temporar */}
                     {/*<div className="absolute inset-0 flex items-center justify-center text-slate-400 bg-slate-100 flex-col gap-2">
@@ -220,7 +233,13 @@ const LeafStore = () => {
             <div className="bg-paper p-0 rounded-2xl shadow-sm border border-slate-100 relative group hover:-translate-y-2 transition duration-300 overflow-hidden">
                 {/* INSTRUCTIUNI POZA PAS 1 (Laptop/Donatie): salveaza ca 'step-1.jpg' */}
                 <div className="h-48 bg-slate-200 w-full relative">
-                    <img src="/step-1.jpg" className="w-full h-full object-cover" />
+                    {/* UPDATED: Folosim Next.js Image component cu fill */}
+                    <Image
+                      src="/step-1.jpg"
+                      alt="Donatie online laptop"
+                      fill
+                      className="object-cover"
+                    />
                     <div className="absolute inset-0 flex items-center justify-center text-slate-400 text-xs">IMG: step-1.jpg</div>
                 </div>
                 <div className="p-8 relative">
@@ -234,7 +253,13 @@ const LeafStore = () => {
              <div className="bg-paper p-0 rounded-2xl shadow-sm border border-slate-100 relative group hover:-translate-y-2 transition duration-300 overflow-hidden">
                 {/* INSTRUCTIUNI POZA PAS 2 (Duba/Transport): salveaza ca 'step-2.jpg' */}
                 <div className="h-48 bg-slate-200 w-full relative">
-                    {/* <img src="/step-2.jpg" className="w-full h-full object-cover" /> */}
+                    {/* UPDATED: Folosim Next.js Image component cu fill */}
+                    <Image
+                      src="/step-2.jpg"
+                      alt="Transport marfa"
+                      fill
+                      className="object-cover"
+                    />
                     <div className="absolute inset-0 flex items-center justify-center text-slate-400 text-xs">IMG: step-2.jpg</div>
                 </div>
                 <div className="p-8 relative">
@@ -248,7 +273,13 @@ const LeafStore = () => {
              <div className="bg-paper p-0 rounded-2xl shadow-sm border border-slate-100 relative group hover:-translate-y-2 transition duration-300 overflow-hidden">
                 {/* INSTRUCTIUNI POZA PAS 3 (Tranzactia/Maini): salveaza ca 'step-3.jpg' */}
                 <div className="h-48 bg-slate-200 w-full relative">
-                    {/* <img src="/step-3.jpg" className="w-full h-full object-cover" /> */}
+                    {/* UPDATED: Folosim Next.js Image component cu fill */}
+                    <Image
+                      src="/step-3.jpg"
+                      alt="Copii cumparand cu frunze"
+                      fill
+                      className="object-cover"
+                    />
                     <div className="absolute inset-0 flex items-center justify-center text-slate-400 text-xs">IMG: step-3.jpg</div>
                 </div>
                 <div className="p-8 relative">
