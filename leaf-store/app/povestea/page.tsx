@@ -1,6 +1,7 @@
 // app/povestea/page.tsx
-import { Heart, Smile, Sun, Leaf, ArrowRight } from 'lucide-react';
+import { Heart, Smile, Sun, Leaf, ArrowRight, UserCheck, Search, School } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Povestea() {
   return (
@@ -20,7 +21,7 @@ export default function Povestea() {
             Dar nu trebuie să fure <span className="text-leaf">demnitatea</span>.
           </h1>
           <p className="text-lg md:text-2xl text-green-50 max-w-2xl mx-auto leading-relaxed font-light">
-            Am creat un univers în care nu există "pomană", ci doar o monedă diferită.
+            Am creat un univers în care nu există &quot;pomană&quot;, ci doar o monedă diferită.
             La noi, copiii nu primesc degeaba. Ei sunt clienți respectați.
           </p>
         </div>
@@ -35,14 +36,14 @@ export default function Povestea() {
             </h2>
             <div className="space-y-6 text-slate-600 text-lg leading-relaxed">
               <p>
-                "Pomana" poate fi umilitoare. Cozile la alimente pot fi traumatizante pentru un copil de 7 ani.
+                &quot;Pomana&quot; poate fi umilitoare. Cozile la alimente pot fi traumatizante pentru un copil de 7 ani.
                 El învață că trebuie să stea cu mâna întinsă.
               </p>
               <p className="font-bold text-forest">
                 Noi am schimbat regulile.
               </p>
               <p>
-                Transformăm ajutorul social într-un joc. Copilul pleacă acasă mândru că a făcut "cumpărături",
+                Transformăm ajutorul social într-un joc. Copilul pleacă acasă mândru că a făcut &quot;cumpărături&quot;,
                 nu rușinat că a primit de milă. Învățăm demnitate și responsabilitate prin puterea jocului.
               </p>
             </div>
@@ -64,11 +65,13 @@ export default function Povestea() {
              <div className="absolute inset-0 bg-gold/20 rounded-3xl transform rotate-3"></div>
              {/* INSTRUCTIUNI IMAGINE: Copil tinand o frunza la ochi (portrait) */}
              <div className="relative bg-slate-200 rounded-3xl overflow-hidden aspect-4/5] shadow-xl">
-                <img src="/poveste-copil.jpg" className="w-full h-full object-cover" />
-                {/* <div className="absolute inset-0 flex items-center justify-center text-slate-400 bg-slate-100 flex-col gap-2">
-                    <span>Imagine Copil</span>
-                    <code className="text-xs">poveste-copil.jpg</code>
-                </div> */}
+                {/* UPDATED: Folosim Next.js Image component */}
+                <Image
+                  src="/poveste-copil.jpg"
+                  alt="Copil cu frunza la ochi"
+                  fill
+                  className="object-cover"
+                />
              </div>
           </div>
         </div>
@@ -128,7 +131,7 @@ export default function Povestea() {
             Viziunea noastră?
         </h2>
         <p className="text-xl text-slate-600 mb-12 leading-relaxed">
-            Vrem să deschidem o rețea națională de "Magazine cu Frunze" în cele mai izolate 100 de sate din România.
+            Vrem să deschidem o rețea națională de &quot;Magazine cu Frunze&quot; în cele mai izolate 100 de sate din România.
             Vrem o comunitate de donatori care înțeleg că <span className="font-bold text-forest">educația începe cu demnitatea</span>.
         </p>
 
@@ -146,7 +149,3 @@ export default function Povestea() {
     </div>
   );
 }
-
-// Iconite suplimentare importate local pentru acest fisier
-// Nota: UserCheck, Search, School, etc. trebuie importate din lucide-react sus
-import { UserCheck, Search, School } from 'lucide-react';
