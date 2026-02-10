@@ -8,15 +8,17 @@ export default function Terms() {
         <h1 className="text-3xl md:text-4xl font-heading font-bold text-forest mb-4">
           Termeni și Condiții
         </h1>
-        <p className="text-sm text-slate-400 mb-12 font-medium">
+        <p className="text-sm text-slate-500 mb-12 font-medium">
           Ultima actualizare: 10 Februarie 2026
         </p>
 
         {/* Continut cu stilizare Prose personalizata */}
-        <div className="prose prose-slate prose-lg max-w-none 
+        {/* AM ACTUALIZAT CLASELE AICI PENTRU CULOARE MAI INCHISA */}
+        <div className="prose prose-slate prose-lg max-w-none text-slate-700
           prose-headings:font-heading prose-headings:text-forest prose-headings:font-bold
-          prose-p:text-slate-600 prose-p:leading-relaxed
+          prose-p:text-slate-700 prose-p:leading-relaxed
           prose-strong:text-forest prose-strong:font-bold
+          prose-li:text-slate-700
           prose-a:text-leaf prose-a:no-underline hover:prose-a:text-forest"
         >
 
