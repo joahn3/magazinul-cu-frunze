@@ -2,7 +2,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { Leaf, MapPin, Menu, X } from 'lucide-react'; // Asigura-te ca ai lucide-react instalat
+import { Leaf, MapPin } from 'lucide-react'; 
+import Navbar from './components/Navbar'; // <--- Importam Navbar-ul creat
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -19,33 +20,11 @@ export default function RootLayout({
   return (
     <html lang="ro">
       <body className={inter.className}>
-        {/* --- GLOBAL HEADER --- */}
-        <nav className="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm border-b border-slate-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
-              <div className="flex items-center gap-2">
-                <a href="/" className="flex items-center gap-2">
-                   <div className="bg-green-600 p-2 rounded-full">
-                     <Leaf className="h-6 w-6 text-white" />
-                   </div>
-                   <span className="font-bold text-xl tracking-tight text-green-900">Magazinul cu Frunze</span>
-                </a>
-              </div>
-              
-              <div className="hidden md:flex items-center space-x-8">
-                <a href="/#cum-functioneaza" className="text-slate-600 hover:text-green-700 font-medium transition">Cum funcționează</a>
-                <a href="/donatii" className="text-slate-600 hover:text-green-700 font-medium transition">Donații</a>
-                <a href="/implica-te" className="text-slate-600 hover:text-green-700 font-medium transition">Voluntari</a>
-                <a href="/contact" className="text-slate-600 hover:text-green-700 font-medium transition">Contact</a>
-                <a href="/donatii" className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full font-bold transition shadow-lg shadow-green-200">
-                  Donează
-                </a>
-              </div>
-            </div>
-          </div>
-        </nav>
+        
+        {/* --- GLOBAL HEADER (Acum e componenta separata) --- */}
+        <Navbar />
 
-        {/* --- CONTENTUL PAGINILOR VA FI RANDAT AICI --- */}
+        {/* --- CONTENT --- */}
         <div className="pt-16 min-h-screen">
             {children}
         </div>
