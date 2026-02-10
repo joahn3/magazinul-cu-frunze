@@ -29,6 +29,9 @@ export default function Navbar() {
             <Link href="/#cum-functioneaza" className="text-slate-600 hover:text-forest font-bold transition-colors">
               Cum funcționează
             </Link>
+            <Link href="/povestea" className="text-slate-600 hover:text-forest font-bold transition-colors">
+              Povestea
+            </Link>
             <Link href="/donatii" className="text-slate-600 hover:text-forest font-bold transition-colors">
               Donații
             </Link>
