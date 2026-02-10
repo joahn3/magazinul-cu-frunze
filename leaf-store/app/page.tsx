@@ -144,6 +144,68 @@ const LeafStore = () => {
         </div>
       </div>
 
+      {/* POVESTEA - Insert this after the Stats section */}
+      <div id="poveste" className="py-24 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+            {/* Text Side */}
+            <div className="mb-12 lg:mb-0">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-sm font-semibold mb-6">
+                <span className="mr-2">🍂</span>
+                Originea Ideii
+              </div>
+              <h2 className="text-4xl font-bold text-slate-900 mb-6">
+                Totul a început de la o joacă.
+              </h2>
+              <div className="prose prose-lg text-slate-600 space-y-6">
+                <p>
+                  Îți amintești când erai mic? Adunai frunze de nuc, pietre de râu sau petale de flori și le transformai în cea mai valoroasă monedă din lume. 
+                  <span className="font-bold text-slate-900"> "Asta costă 2 frunze"</span>, spuneai. Și jocul era magic.
+                </p>
+                <p>
+                  Pentru mii de copii din satele României, însă, lipsurile nu sunt o joacă. Sărăcia le fură nu doar mâncarea de pe masă, ci și demnitatea. 
+                  Să primești "de pomană" poate fi rușinos.
+                </p>
+                <p className="border-l-4 border-green-500 pl-4 italic text-slate-800 bg-slate-50 py-2 pr-2">
+                  "Am creat Magazinul cu Frunze pentru a le oferi ajutorul de care au nevoie, păstrându-le inocența. Aici ei nu cerșesc. Ei cumpără. Cu singura resursă pe care o au din belșug: natura."
+                </p>
+                <p>
+                  Fiecare donație a ta devine un produs pe raft. Fiecare frunză a lor devine un zâmbet demn.
+                </p>
+              </div>
+              
+              <div className="mt-8 flex gap-4">
+                 <div className="flex -space-x-4">
+                    <div className="w-12 h-12 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-xs">Foto</div>
+                    <div className="w-12 h-12 rounded-full border-2 border-white bg-slate-300 flex items-center justify-center text-xs">Foto</div>
+                    <div className="w-12 h-12 rounded-full border-2 border-white bg-slate-400 flex items-center justify-center text-xs">Foto</div>
+                 </div>
+                 <div className="flex items-center text-sm text-slate-500 font-medium">
+                    Alătură-te celor care au donat deja
+                 </div>
+              </div>
+            </div>
+
+            {/* Image Side */}
+            <div className="relative">
+              {/* Main Image Frame */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white rotate-2 hover:rotate-0 transition duration-500">
+                {/* Aici vom pune imaginea generata cu Nano Banana (Scenario 2) */}
+                <div className="aspect-[4/5] bg-slate-200 w-full object-cover relative">
+                    <div className="absolute inset-0 flex items-center justify-center text-slate-400">
+                        Imagine: Copil oferind o frunză
+                    </div>
+                </div>
+              </div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-green-100 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-yellow-100 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* HOW IT WORKS */}
       <div id="cum-functioneaza" className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
