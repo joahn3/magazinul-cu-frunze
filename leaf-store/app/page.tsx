@@ -101,7 +101,7 @@ const LeafStore = () => {
              {/* Bara Progres */}
              <div className="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
                 <div
-                    className="bg-gradient-to-r from-leaf to-forest h-3 rounded-full transition-all duration-1000 ease-out"
+                    className="bg-linear-to-r from-leaf to-forest h-3 rounded-full transition-all duration-1000 ease-out"
                     style={{ width: `${progressPercent}%` }}
                 ></div>
              </div>
@@ -186,14 +186,14 @@ const LeafStore = () => {
                    1. Salveaza poza "portrait of village boy holding leaf" ca 'poveste-copil.jpg' in /public
                    2. Sterge div-ul placeholder si activeaza img-ul de mai jos:
                 */}
-                <div className="aspect-[4/5] bg-slate-200 w-full object-cover relative group">
-                    {/* <img src="/poveste-copil.jpg" alt="Copil cu frunza" className="w-full h-full object-cover" /> */}
+                <div className="aspect-4/5] bg-slate-200 w-full object-cover relative group">
+                    <img src="/poveste-copil.jpg" alt="Copil cu frunza" className="w-full h-full object-cover" />
 
                     {/* Placeholder Temporar */}
-                    <div className="absolute inset-0 flex items-center justify-center text-slate-400 bg-slate-100 flex-col gap-2">
+                    {/*<div className="absolute inset-0 flex items-center justify-center text-slate-400 bg-slate-100 flex-col gap-2">
                         <span>Inserare Imagine:</span>
                         <code className="text-xs bg-slate-200 px-2 py-1 rounded">/public/poveste-copil.jpg</code>
-                    </div>
+                    </div> */}
                 </div>
               </div>
 
@@ -220,7 +220,7 @@ const LeafStore = () => {
             <div className="bg-paper p-0 rounded-2xl shadow-sm border border-slate-100 relative group hover:-translate-y-2 transition duration-300 overflow-hidden">
                 {/* INSTRUCTIUNI POZA PAS 1 (Laptop/Donatie): salveaza ca 'step-1.jpg' */}
                 <div className="h-48 bg-slate-200 w-full relative">
-                    {/* <img src="/step-1.jpg" className="w-full h-full object-cover" /> */}
+                    <img src="/step-1.jpg" className="w-full h-full object-cover" />
                     <div className="absolute inset-0 flex items-center justify-center text-slate-400 text-xs">IMG: step-1.jpg</div>
                 </div>
                 <div className="p-8 relative">
