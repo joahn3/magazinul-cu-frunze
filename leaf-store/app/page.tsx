@@ -2,11 +2,12 @@
 import React from 'react';
 import { ShoppingBag, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
-// Daca ai imagini locale, importa-le aici sau foloseste <Image src="..." /> direct
+// Nota: Imaginile locale vor fi adaugate in folderul /public si referite prin <img src="..." /> sau <Image />
 
 const LeafStore = () => {
 
-  // Produsele disponibile pentru donație (Demo)
+  // Produsele disponibile pentru donație
+  // Am actualizat culorile de fundal pentru a fi mai subtile
   const products = [
     {
       id: 1,
@@ -14,7 +15,7 @@ const LeafStore = () => {
       price: 25,
       description: "Lapte, cereale și biscuiți pentru o săptămână.",
       icon: "🥛",
-      color: "bg-blue-50"
+      color: "bg-blue-50 text-blue-600"
     },
     {
       id: 2,
@@ -22,7 +23,7 @@ const LeafStore = () => {
       price: 35,
       description: "Caiete, pixuri și creioane colorate.",
       icon: "✏️",
-      color: "bg-yellow-50"
+      color: "bg-gold/20 text-earth"
     },
     {
       id: 3,
@@ -30,7 +31,7 @@ const LeafStore = () => {
       price: 15,
       description: "Ciocolată și fructe pentru bucurie pură.",
       icon: "🍫",
-      color: "bg-pink-50"
+      color: "bg-pink-50 text-pink-600"
     },
     {
       id: 4,
@@ -38,46 +39,54 @@ const LeafStore = () => {
       price: 100,
       description: "Ulei, făină, zahăr și orez pentru o familie.",
       icon: "🏠",
-      color: "bg-green-50"
+      color: "bg-leaf/20 text-forest"
     }
   ];
 
   return (
-    <div className="font-sans text-slate-800">
+    <div className="font-body text-slate-700 bg-paper">
       
-      {/* NOTA: Header-ul (Navigation) este acum in layout.tsx, deci il scoatem de aici */}
-
       {/* HERO SECTION */}
       <div className="relative pt-20 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
-            {/* Aici poti pune imaginea Hero (poza cu mana si frunza) cand o ai gata */}
-            {/* <img src="/hero-bg.jpg" className="w-full h-full object-cover opacity-20" /> */}
+            {/* Imagine de fundal (cand va fi disponibila) */}
+            {/* <img src="/hero-bg.jpg" className="w-full h-full object-cover opacity-20" alt="Sat romanesc" /> */}
             
-            <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-100 opacity-70"></div>
-            {/* Pattern decorativ abstract */}
-            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
-            <div className="absolute top-0 left-0 -ml-20 -mt-20 w-96 h-96 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-paper via-white to-green-50 opacity-80"></div>
+            
+            {/* Elemente decorative abstracte */}
+            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-gold/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+            <div className="absolute top-0 left-0 -ml-20 -mt-20 w-96 h-96 bg-leaf/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-semibold mb-6">
-            <span className="flex h-2 w-2 rounded-full bg-green-600 mr-2"></span>
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white border border-leaf/20 text-forest text-sm font-bold mb-6 shadow-sm">
+            <span className="flex h-2 w-2 rounded-full bg-leaf mr-2"></span>
             Proiect Pilot: Lansare în Iunie 2026
           </div>
-          <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-8">
+          
+          <h1 className="text-5xl md:text-7xl font-heading font-extrabold text-forest tracking-tight mb-8 leading-tight">
             La noi, banii cresc <br />
-            <span className="text-green-600">în copaci.</span>
+            <span className="text-leaf relative inline-block">
+              în copaci.
+              {/* Linie decorativa sub text */}
+              <svg className="absolute w-full h-3 -bottom-1 left-0 text-gold opacity-60" viewBox="0 0 100 10" preserveAspectRatio="none">
+                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="3" fill="none" />
+              </svg>
+            </span>
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-xl text-slate-600 mb-10">
+          
+          <p className="mt-6 max-w-2xl mx-auto text-xl text-slate-600 mb-10 leading-relaxed">
             Primul lanț de magazine din România unde copiii vulnerabili "plătesc" cu frunze, 
             iar tu asiguri stocul real prin donații transparente.
           </p>
+          
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/donatii" className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-full font-bold text-lg transition shadow-xl shadow-green-200 flex items-center justify-center gap-2">
+            <Link href="/donatii" className="px-8 py-4 bg-forest hover:bg-forest-hover text-white rounded-full font-bold text-lg transition shadow-xl shadow-green-900/10 flex items-center justify-center gap-2 transform hover:-translate-y-1">
               <ShoppingBag size={20} />
               Umple un Raft
             </Link>
-            <a href="#poveste" className="px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 rounded-full font-bold text-lg transition flex items-center justify-center gap-2">
+            <a href="#poveste" className="px-8 py-4 bg-white hover:bg-paper text-forest border border-slate-200 rounded-full font-bold text-lg transition flex items-center justify-center gap-2">
               Vezi Povestea
             </a>
           </div>
@@ -85,58 +94,59 @@ const LeafStore = () => {
       </div>
 
       {/* STATS / TRUST */}
-      <div className="bg-white py-12 border-y border-slate-100">
+      <div className="bg-white py-16 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-slate-900 mb-2">0</div>
-              <div className="text-slate-500 font-medium">Magazine Deschise</div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            <div className="p-4">
+              <div className="text-5xl font-heading font-bold text-forest mb-2">0</div>
+              <div className="text-earth font-medium uppercase tracking-wide text-sm">Magazine Deschise</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold text-slate-900 mb-2">0</div>
-              <div className="text-slate-500 font-medium">Frunze Colectate</div>
+            <div className="p-4">
+              <div className="text-5xl font-heading font-bold text-leaf mb-2">0</div>
+              <div className="text-earth font-medium uppercase tracking-wide text-sm">Frunze Colectate</div>
             </div>
-            <div>
-              <div className="text-4xl font-bold text-slate-900 mb-2">0</div>
-              <div className="text-slate-500 font-medium">Copii Fericiți</div>
+            <div className="p-4">
+              <div className="text-5xl font-heading font-bold text-gold mb-2">0</div>
+              <div className="text-earth font-medium uppercase tracking-wide text-sm">Copii Fericiți</div>
             </div>
           </div>
         </div>
       </div>
 
       {/* POVESTEA */}
-      <div id="poveste" className="py-24 bg-white overflow-hidden">
+      <div id="poveste" className="py-24 bg-paper overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
             {/* Text Side */}
             <div className="mb-12 lg:mb-0">
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-yellow-100 text-yellow-800 text-sm font-semibold mb-6">
+              <div className="inline-flex items-center px-3 py-1 rounded-full bg-gold/20 text-earth text-sm font-bold mb-6">
                 <span className="mr-2">🍂</span>
                 Originea Ideii
               </div>
-              <h2 className="text-4xl font-bold text-slate-900 mb-6">
+              <h2 className="text-4xl font-heading font-bold text-forest mb-6">
                 Totul a început de la o joacă.
               </h2>
               <div className="prose prose-lg text-slate-600 space-y-6">
                 <p>
                   Îți amintești când erai mic? Adunai frunze de nuc, pietre de râu sau petale de flori și le transformai în cea mai valoroasă monedă din lume. 
-                  <span className="font-bold text-slate-900"> "Asta costă 2 frunze"</span>, spuneai. Și jocul era magic.
+                  <span className="font-bold text-forest"> "Asta costă 2 frunze"</span>, spuneai. Și jocul era magic.
                 </p>
                 <p>
                   Pentru mii de copii din satele României, însă, lipsurile nu sunt o joacă. Sărăcia le fură nu doar mâncarea de pe masă, ci și demnitatea. 
                   Să primești "de pomană" poate fi rușinos.
                 </p>
-                <p className="border-l-4 border-green-500 pl-4 italic text-slate-800 bg-slate-50 py-2 pr-2">
-                  "Am creat Magazinul cu Frunze pentru a le oferi ajutorul de care au nevoie, păstrându-le inocența. Aici ei nu cerșesc. Ei cumpără. Cu singura resursă pe care o au din belșug: natura."
-                </p>
+                <blockquote className="border-l-4 border-leaf pl-4 italic text-forest bg-white py-4 px-4 rounded-r-lg shadow-sm">
+                  "Am creat Magazinul cu Frunze pentru a le oferi ajutorul de care au nevoie, păstrându-le inocența. Aici ei nu cerșesc. Ei cumpără."
+                </blockquote>
                 <p>
                   Fiecare donație a ta devine un produs pe raft. Fiecare frunză a lor devine un zâmbet demn.
                 </p>
               </div>
               
-              <div className="mt-8 flex gap-4">
-                 <Link href="/transparenta" className="flex items-center text-green-600 font-bold hover:underline">
-                    Vezi Rapoartele de Transparență <ArrowRight className="ml-2 h-4 w-4"/>
+              <div className="mt-8">
+                 <Link href="/transparenta" className="flex items-center text-leaf font-bold hover:text-forest transition-colors group">
+                    Vezi Rapoartele de Transparență 
+                    <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform"/>
                  </Link>
               </div>
             </div>
@@ -144,49 +154,52 @@ const LeafStore = () => {
             {/* Image Side */}
             <div className="relative">
               {/* Main Image Frame */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white rotate-2 hover:rotate-0 transition duration-500">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-[6px] border-white rotate-2 hover:rotate-0 transition duration-500">
                 {/* Aici vei pune imaginea cu copilul tinand frunza la ochi */}
                 <div className="aspect-[4/5] bg-slate-200 w-full object-cover relative group">
-                    <div className="absolute inset-0 flex items-center justify-center text-slate-400">
+                    <div className="absolute inset-0 flex items-center justify-center text-slate-400 bg-slate-100">
                         {/* Placeholder pana pui <Image /> */}
-                        Imagine Copil (Portret)
+                        <span className="text-sm">Inserare Imagine: child-leaf.jpg</span>
                     </div>
                 </div>
               </div>
               
               {/* Decorative Elements */}
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-green-100 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-yellow-100 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-leaf/20 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-gold/20 rounded-full mix-blend-multiply filter blur-2xl opacity-70"></div>
             </div>
           </div>
         </div>
       </div>
 
       {/* HOW IT WORKS */}
-      <div id="cum-functioneaza" className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="cum-functioneaza" className="py-24 bg-white relative">
+        {/* Background pattern subtil */}
+        <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'radial-gradient(#166534 1px, transparent 1px)', backgroundSize: '24px 24px'}}></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900">Cum funcționează magia?</h2>
-            <p className="mt-4 text-slate-600">Transformăm un gest simplu într-un lanț al bunătății.</p>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-forest">Cum funcționează magia?</h2>
+            <p className="mt-4 text-slate-600 text-lg">Transformăm un gest simplu într-un lanț al bunătății.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Step 1 */}
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 relative">
-              <div className="absolute -top-6 left-8 w-12 h-12 bg-green-600 text-white rounded-xl flex items-center justify-center font-bold text-xl">1</div>
-              <h3 className="text-xl font-bold text-slate-900 mt-4 mb-3">Tu Donezi Online</h3>
+            <div className="bg-paper p-8 rounded-2xl shadow-sm border border-slate-100 relative group hover:-translate-y-2 transition duration-300">
+              <div className="absolute -top-6 left-8 w-12 h-12 bg-forest text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-lg group-hover:bg-leaf transition-colors">1</div>
+              <h3 className="text-xl font-heading font-bold text-forest mt-4 mb-3">Tu Donezi Online</h3>
               <p className="text-slate-600">Cumperi produse virtuale de pe site-ul nostru. Banii tăi se transformă direct în stoc real de marfă.</p>
             </div>
              {/* Step 2 */}
-             <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 relative">
-              <div className="absolute -top-6 left-8 w-12 h-12 bg-green-600 text-white rounded-xl flex items-center justify-center font-bold text-xl">2</div>
-              <h3 className="text-xl font-bold text-slate-900 mt-4 mb-3">Noi Aprovizionăm</h3>
+             <div className="bg-paper p-8 rounded-2xl shadow-sm border border-slate-100 relative group hover:-translate-y-2 transition duration-300">
+              <div className="absolute -top-6 left-8 w-12 h-12 bg-forest text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-lg group-hover:bg-leaf transition-colors">2</div>
+              <h3 className="text-xl font-heading font-bold text-forest mt-4 mb-3">Noi Aprovizionăm</h3>
               <p className="text-slate-600">Ducem alimente, rechizite și dulciuri în satele uitate de lume, aranjând totul ca într-un magazin adevărat.</p>
             </div>
              {/* Step 3 */}
-             <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 relative">
-              <div className="absolute -top-6 left-8 w-12 h-12 bg-green-600 text-white rounded-xl flex items-center justify-center font-bold text-xl">3</div>
-              <h3 className="text-xl font-bold text-slate-900 mt-4 mb-3">Ei Plătesc cu Frunze</h3>
+             <div className="bg-paper p-8 rounded-2xl shadow-sm border border-slate-100 relative group hover:-translate-y-2 transition duration-300">
+              <div className="absolute -top-6 left-8 w-12 h-12 bg-forest text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-lg group-hover:bg-leaf transition-colors">3</div>
+              <h3 className="text-xl font-heading font-bold text-forest mt-4 mb-3">Ei Plătesc cu Frunze</h3>
               <p className="text-slate-600">Copiii vin la magazin și "cumpără" ce au nevoie folosind frunze. Păstrăm demnitatea și bucuria jocului.</p>
             </div>
           </div>
@@ -194,28 +207,28 @@ const LeafStore = () => {
       </div>
 
       {/* DONATION STORE PREVIEW */}
-      <div id="magazin" className="py-24 bg-white">
+      <div id="magazin" className="py-24 bg-paper">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl font-bold text-slate-900">Umple Rafturile</h2>
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-forest">Umple Rafturile</h2>
               <p className="mt-4 text-slate-600">Alege ce vrei să trimiți copiilor.</p>
             </div>
-            <Link href="/donatii" className="hidden md:flex text-green-600 font-bold hover:underline items-center">
+            <Link href="/donatii" className="hidden md:flex text-leaf font-bold hover:text-forest items-center transition-colors">
                 Vezi toate opțiunile <ArrowRight className="ml-2 h-4 w-4"/>
             </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {products.map((product) => (
-              <div key={product.id} className="group relative bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300">
+              <div key={product.id} className="group relative bg-white border border-slate-100 rounded-2xl overflow-hidden hover:shadow-xl hover:border-leaf/30 transition-all duration-300">
                 <div className={`h-48 ${product.color} flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-300`}>
                   {product.icon}
                 </div>
                 <div className="p-6">
-                  <h3 className="font-bold text-lg text-slate-900 mb-2">{product.name}</h3>
-                  <p className="text-sm text-slate-500 mb-6 h-10">{product.description}</p>
-                  <Link href="/donatii" className="w-full py-3 bg-slate-900 hover:bg-green-600 text-white rounded-xl font-bold transition flex justify-between px-6 items-center">
+                  <h3 className="font-bold text-lg text-forest mb-2">{product.name}</h3>
+                  <p className="text-sm text-slate-500 mb-6 h-10 line-clamp-2">{product.description}</p>
+                  <Link href="/donatii" className="w-full py-3 bg-forest hover:bg-leaf text-white rounded-xl font-bold transition flex justify-between px-6 items-center">
                     <span>Donează</span>
                     <span>{product.price} RON</span>
                   </Link>
@@ -224,8 +237,8 @@ const LeafStore = () => {
             ))}
           </div>
           
-          <div className="mt-8 text-center md:hidden">
-            <Link href="/donatii" className="inline-flex text-green-600 font-bold hover:underline items-center">
+          <div className="mt-12 text-center md:hidden">
+            <Link href="/donatii" className="inline-flex text-leaf font-bold hover:text-forest items-center">
                 Vezi toate opțiunile <ArrowRight className="ml-2 h-4 w-4"/>
             </Link>
           </div>
@@ -233,19 +246,20 @@ const LeafStore = () => {
       </div>
 
       {/* CTA FINAL */}
-      <div className="bg-green-600 py-24 text-center">
-         <div className="max-w-4xl mx-auto px-4">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Nu ai bani de donat?</h2>
-            <p className="text-green-100 text-lg mb-8">
-                Nu-i nimic. Avem nevoie de oameni care să sorteze pachete, să conducă dubele cu marfă sau să facă poze.
+      <div className="bg-forest py-24 text-center relative overflow-hidden">
+         {/* Elemente decorative fundal */}
+         <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/wood-pattern.png')]"></div>
+
+         <div className="max-w-4xl mx-auto px-4 relative z-10">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">Nu ai bani de donat?</h2>
+            <p className="text-green-50 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+                Nu-i nimic. Magazinul cu Frunze are nevoie de brațe puternice pentru sortat pachete, de șoferi sau de fotografi care să spună povestea.
             </p>
-            <Link href="/implica-te" className="inline-block bg-white text-green-800 px-8 py-4 rounded-full font-bold text-lg hover:bg-green-50 transition shadow-lg">
+            <Link href="/implica-te" className="inline-block bg-gold hover:bg-yellow-400 text-forest px-10 py-4 rounded-full font-bold text-lg transition shadow-lg transform hover:-translate-y-1">
                 Devino Voluntar
             </Link>
          </div>
       </div>
-
-      {/* NOTA: Footer-ul este acum in layout.tsx, deci il scoatem de aici */}
 
     </div>
   );
