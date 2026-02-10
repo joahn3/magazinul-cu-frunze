@@ -112,7 +112,7 @@ const LeafStore = () => {
               <ShoppingBag size={20} />
               Umple un Raft
             </Link>
-            <a href="#poveste" className="px-8 py-4 bg-white hover:bg-paper text-forest border border-slate-200 rounded-full font-bold text-lg transition flex items-center justify-center gap-2">
+            <a href="/povestea/" className="px-8 py-4 bg-white hover:bg-paper text-forest border border-slate-200 rounded-full font-bold text-lg transition flex items-center justify-center gap-2">
               Vezi Povestea
             </a>
           </div>
