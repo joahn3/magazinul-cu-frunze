@@ -1,11 +1,12 @@
 "use client";
-import React, { useState } from 'react';
-import { Leaf, Heart, ShoppingBag, MapPin, ArrowRight, Menu, X } from 'lucide-react';
+import React from 'react';
+import { ShoppingBag, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
+// Daca ai imagini locale, importa-le aici sau foloseste <Image src="..." /> direct
 
 const LeafStore = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Produsele disponibile pentru donație
+  // Produsele disponibile pentru donație (Demo)
   const products = [
     {
       id: 1,
@@ -42,57 +43,16 @@ const LeafStore = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-800">
+    <div className="font-sans text-slate-800">
       
-      {/* Navigation */}
-      <nav className="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center gap-2">
-              <div className="bg-green-600 p-2 rounded-full">
-                <Leaf className="h-6 w-6 text-white" />
-              </div>
-              <span className="font-bold text-xl tracking-tight text-green-900">Magazinul cu Frunze</span>
-            </div>
-            
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#cum-functioneaza" className="text-slate-600 hover:text-green-700 font-medium transition">Cum funcționează</a>
-              <a href="#magazin" className="text-slate-600 hover:text-green-700 font-medium transition">Umple Raftul</a>
-              <a href="#poveste" className="text-slate-600 hover:text-green-700 font-medium transition">Povestea</a>
-              <button className="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-full font-bold transition shadow-lg shadow-green-200">
-                Donează Acum
-              </button>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <div className="md:hidden flex items-center">
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-slate-600">
-                {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-              </button>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Menu Dropdown */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white border-t border-slate-100 absolute w-full">
-            <div className="px-4 pt-2 pb-4 space-y-1">
-              <a href="#cum-functioneaza" className="block px-3 py-2 text-slate-600 font-medium">Cum funcționează</a>
-              <a href="#magazin" className="block px-3 py-2 text-slate-600 font-medium">Umple Raftul</a>
-              <a href="#poveste" className="block px-3 py-2 text-slate-600 font-medium">Povestea</a>
-              <button className="w-full mt-4 bg-green-600 text-white px-5 py-3 rounded-lg font-bold">
-                Donează Acum
-              </button>
-            </div>
-          </div>
-        )}
-      </nav>
+      {/* NOTA: Header-ul (Navigation) este acum in layout.tsx, deci il scoatem de aici */}
 
       {/* HERO SECTION */}
-      <div className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <div className="relative pt-20 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
-            {/* Aici vom pune o imagine reala mai tarziu. Acum folosim un gradient */}
+            {/* Aici poti pune imaginea Hero (poza cu mana si frunza) cand o ai gata */}
+            {/* <img src="/hero-bg.jpg" className="w-full h-full object-cover opacity-20" /> */}
+            
             <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-100 opacity-70"></div>
             {/* Pattern decorativ abstract */}
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-yellow-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
@@ -113,10 +73,10 @@ const LeafStore = () => {
             iar tu asiguri stocul real prin donații transparente.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="#magazin" className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-full font-bold text-lg transition shadow-xl shadow-green-200 flex items-center justify-center gap-2">
+            <Link href="/donatii" className="px-8 py-4 bg-green-600 hover:bg-green-700 text-white rounded-full font-bold text-lg transition shadow-xl shadow-green-200 flex items-center justify-center gap-2">
               <ShoppingBag size={20} />
               Umple un Raft
-            </a>
+            </Link>
             <a href="#poveste" className="px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 rounded-full font-bold text-lg transition flex items-center justify-center gap-2">
               Vezi Povestea
             </a>
@@ -144,7 +104,7 @@ const LeafStore = () => {
         </div>
       </div>
 
-      {/* POVESTEA - Insert this after the Stats section */}
+      {/* POVESTEA */}
       <div id="poveste" className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
@@ -175,14 +135,9 @@ const LeafStore = () => {
               </div>
               
               <div className="mt-8 flex gap-4">
-                 <div className="flex -space-x-4">
-                    <div className="w-12 h-12 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center text-xs">Foto</div>
-                    <div className="w-12 h-12 rounded-full border-2 border-white bg-slate-300 flex items-center justify-center text-xs">Foto</div>
-                    <div className="w-12 h-12 rounded-full border-2 border-white bg-slate-400 flex items-center justify-center text-xs">Foto</div>
-                 </div>
-                 <div className="flex items-center text-sm text-slate-500 font-medium">
-                    Alătură-te celor care au donat deja
-                 </div>
+                 <Link href="/transparenta" className="flex items-center text-green-600 font-bold hover:underline">
+                    Vezi Rapoartele de Transparență <ArrowRight className="ml-2 h-4 w-4"/>
+                 </Link>
               </div>
             </div>
 
@@ -190,10 +145,11 @@ const LeafStore = () => {
             <div className="relative">
               {/* Main Image Frame */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white rotate-2 hover:rotate-0 transition duration-500">
-                {/* Aici vom pune imaginea generata cu Nano Banana (Scenario 2) */}
-                <div className="aspect-[4/5] bg-slate-200 w-full object-cover relative">
+                {/* Aici vei pune imaginea cu copilul tinand frunza la ochi */}
+                <div className="aspect-[4/5] bg-slate-200 w-full object-cover relative group">
                     <div className="absolute inset-0 flex items-center justify-center text-slate-400">
-                        Imagine: Copil oferind o frunză
+                        {/* Placeholder pana pui <Image /> */}
+                        Imagine Copil (Portret)
                     </div>
                 </div>
               </div>
@@ -237,7 +193,7 @@ const LeafStore = () => {
         </div>
       </div>
 
-      {/* DONATION STORE */}
+      {/* DONATION STORE PREVIEW */}
       <div id="magazin" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-end mb-12">
@@ -245,6 +201,9 @@ const LeafStore = () => {
               <h2 className="text-3xl font-bold text-slate-900">Umple Rafturile</h2>
               <p className="mt-4 text-slate-600">Alege ce vrei să trimiți copiilor.</p>
             </div>
+            <Link href="/donatii" className="hidden md:flex text-green-600 font-bold hover:underline items-center">
+                Vezi toate opțiunile <ArrowRight className="ml-2 h-4 w-4"/>
+            </Link>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -256,54 +215,38 @@ const LeafStore = () => {
                 <div className="p-6">
                   <h3 className="font-bold text-lg text-slate-900 mb-2">{product.name}</h3>
                   <p className="text-sm text-slate-500 mb-6 h-10">{product.description}</p>
-                  <button className="w-full py-3 bg-slate-900 hover:bg-green-600 text-white rounded-xl font-bold transition flex justify-between px-6 items-center">
+                  <Link href="/donatii" className="w-full py-3 bg-slate-900 hover:bg-green-600 text-white rounded-xl font-bold transition flex justify-between px-6 items-center">
                     <span>Donează</span>
                     <span>{product.price} RON</span>
-                  </button>
+                  </Link>
                 </div>
               </div>
             ))}
           </div>
+          
+          <div className="mt-8 text-center md:hidden">
+            <Link href="/donatii" className="inline-flex text-green-600 font-bold hover:underline items-center">
+                Vezi toate opțiunile <ArrowRight className="ml-2 h-4 w-4"/>
+            </Link>
+          </div>
         </div>
       </div>
 
-      {/* FOOTER */}
-      <footer className="bg-slate-900 text-slate-400 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="col-span-1 md:col-span-2">
-              <div className="flex items-center gap-2 mb-4">
-                <div className="bg-green-600 p-1.5 rounded-full">
-                  <Leaf className="h-5 w-5 text-white" />
-                </div>
-                <span className="font-bold text-xl text-white">Magazinul cu Frunze</span>
-              </div>
-              <p className="text-sm max-w-sm">
-                Un proiect social care combate sărăcia prin educație și demnitate.
-                Construit cu ❤️ în România.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-bold text-white mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-green-400">Termeni și condiții</a></li>
-                <li><a href="#" className="hover:text-green-400">Politica de confidențialitate</a></li>
-                <li><a href="#" className="hover:text-green-400">Raport Transparență</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold text-white mb-4">Contact</h4>
-              <ul className="space-y-2 text-sm">
-                <li className="flex items-center gap-2"><MapPin size={16}/> Bragadiru, Ilfov</li>
-                <li>contact@magazinulcufrunze.ro</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-slate-800 mt-12 pt-8 text-sm text-center">
-            &copy; 2026 Magazinul cu Frunze. Toate drepturile rezervate.
-          </div>
-        </div>
-      </footer>
+      {/* CTA FINAL */}
+      <div className="bg-green-600 py-24 text-center">
+         <div className="max-w-4xl mx-auto px-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Nu ai bani de donat?</h2>
+            <p className="text-green-100 text-lg mb-8">
+                Nu-i nimic. Avem nevoie de oameni care să sorteze pachete, să conducă dubele cu marfă sau să facă poze.
+            </p>
+            <Link href="/implica-te" className="inline-block bg-white text-green-800 px-8 py-4 rounded-full font-bold text-lg hover:bg-green-50 transition shadow-lg">
+                Devino Voluntar
+            </Link>
+         </div>
+      </div>
+
+      {/* NOTA: Footer-ul este acum in layout.tsx, deci il scoatem de aici */}
+
     </div>
   );
 };
