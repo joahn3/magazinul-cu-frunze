@@ -1,13 +1,11 @@
 "use client";
 import React from 'react';
-import { ShoppingBag, ArrowRight } from 'lucide-react';
+import { ShoppingBag, ArrowRight, Target } from 'lucide-react';
 import Link from 'next/link';
-// Nota: Imaginile locale vor fi adaugate in folderul /public si referite prin <img src="..." /> sau <Image />
 
 const LeafStore = () => {
 
   // Produsele disponibile pentru donație
-  // Am actualizat culorile de fundal pentru a fi mai subtile
   const products = [
     {
       id: 1,
@@ -43,16 +41,25 @@ const LeafStore = () => {
     }
   ];
 
+  // Configurare Obiectiv Pilot
+  const targetAmount = 25000;
+  const currentAmount = 0; // Aici vei actualiza suma manual sau prin API
+  const progressPercent = Math.min((currentAmount / targetAmount) * 100, 100);
+
   return (
     <div className="font-body text-slate-700 bg-paper">
       
       {/* HERO SECTION */}
       <div className="relative pt-20 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
-            {/* Imagine de fundal (cand va fi disponibila) */}
+            {/* INSTRUCTIUNI IMAGINE FUNDAL HERO:
+                1. Salveaza imaginea cu "mainile si painea pe masa" ca 'hero-bg.jpg' in folderul /public
+                2. Decomenteaza linia de mai jos:
+            */}
             {/* <img src="/hero-bg.jpg" className="w-full h-full object-cover opacity-20" alt="Sat romanesc" /> */}
             
-            <div className="absolute inset-0 bg-gradient-to-br from-paper via-white to-green-50 opacity-80"></div>
+            {/* Fallback gradient daca nu e poza */}
+            <div className="absolute inset-0 bg-gradient-to-br from-paper via-white to-green-50 opacity-90"></div>
             
             {/* Elemente decorative abstracte */}
             <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-gold/20 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
@@ -81,6 +88,25 @@ const LeafStore = () => {
             iar tu asiguri stocul real prin donații transparente.
           </p>
           
+          {/* OBIECTIV PILOT (Nou adaugat) */}
+          <div className="max-w-md mx-auto bg-white p-4 rounded-2xl shadow-lg border border-leaf/20 mb-10 relative overflow-hidden">
+             <div className="flex items-center justify-between mb-2">
+                <div className="flex items-center gap-2 text-forest font-bold">
+                    <Target size={20} className="text-red-500" />
+                    <span>Obiectiv Pilot: 1 Sat / 1 Lună</span>
+                </div>
+                <span className="text-sm font-bold text-slate-500">{currentAmount} / {targetAmount.toLocaleString()} RON</span>
+             </div>
+             {/* Bara Progres */}
+             <div className="w-full bg-slate-100 rounded-full h-3 overflow-hidden">
+                <div 
+                    className="bg-gradient-to-r from-leaf to-forest h-3 rounded-full transition-all duration-1000 ease-out" 
+                    style={{ width: `${progressPercent}%` }}
+                ></div>
+             </div>
+             <p className="text-xs text-center mt-2 text-slate-400 font-medium">Ajută-ne să deschidem primul magazin.</p>
+          </div>
+
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/donatii" className="px-8 py-4 bg-forest hover:bg-forest-hover text-white rounded-full font-bold text-lg transition shadow-xl shadow-green-900/10 flex items-center justify-center gap-2 transform hover:-translate-y-1">
               <ShoppingBag size={20} />
@@ -155,11 +181,17 @@ const LeafStore = () => {
             <div className="relative">
               {/* Main Image Frame */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-[6px] border-white rotate-2 hover:rotate-0 transition duration-500">
-                {/* Aici vei pune imaginea cu copilul tinand frunza la ochi */}
+                {/* INSTRUCTIUNI IMAGINE PORTRET COPIL:
+                   1. Salveaza poza "portrait of village boy holding leaf" ca 'poveste-copil.jpg' in /public
+                   2. Sterge div-ul placeholder si activeaza img-ul de mai jos:
+                */}
                 <div className="aspect-[4/5] bg-slate-200 w-full object-cover relative group">
-                    <div className="absolute inset-0 flex items-center justify-center text-slate-400 bg-slate-100">
-                        {/* Placeholder pana pui <Image /> */}
-                        <span className="text-sm">Inserare Imagine: child-leaf.jpg</span>
+                    {/* <img src="/poveste-copil.jpg" alt="Copil cu frunza" className="w-full h-full object-cover" /> */}
+                    
+                    {/* Placeholder Temporar */}
+                    <div className="absolute inset-0 flex items-center justify-center text-slate-400 bg-slate-100 flex-col gap-2">
+                        <span>Inserare Imagine:</span>
+                        <code className="text-xs bg-slate-200 px-2 py-1 rounded">/public/poveste-copil.jpg</code>
                     </div>
                 </div>
               </div>
@@ -174,7 +206,6 @@ const LeafStore = () => {
 
       {/* HOW IT WORKS */}
       <div id="cum-functioneaza" className="py-24 bg-white relative">
-        {/* Background pattern subtil */}
         <div className="absolute inset-0 opacity-5" style={{backgroundImage: 'radial-gradient(#166534 1px, transparent 1px)', backgroundSize: '24px 24px'}}></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -185,22 +216,45 @@ const LeafStore = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Step 1 */}
-            <div className="bg-paper p-8 rounded-2xl shadow-sm border border-slate-100 relative group hover:-translate-y-2 transition duration-300">
-              <div className="absolute -top-6 left-8 w-12 h-12 bg-forest text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-lg group-hover:bg-leaf transition-colors">1</div>
-              <h3 className="text-xl font-heading font-bold text-forest mt-4 mb-3">Tu Donezi Online</h3>
-              <p className="text-slate-600">Cumperi produse virtuale de pe site-ul nostru. Banii tăi se transformă direct în stoc real de marfă.</p>
+            <div className="bg-paper p-0 rounded-2xl shadow-sm border border-slate-100 relative group hover:-translate-y-2 transition duration-300 overflow-hidden">
+                {/* INSTRUCTIUNI POZA PAS 1 (Laptop/Donatie): salveaza ca 'step-1.jpg' */}
+                <div className="h-48 bg-slate-200 w-full relative">
+                    {/* <img src="/step-1.jpg" className="w-full h-full object-cover" /> */}
+                    <div className="absolute inset-0 flex items-center justify-center text-slate-400 text-xs">IMG: step-1.jpg</div>
+                </div>
+                <div className="p-8 relative">
+                    <div className="absolute -top-6 left-8 w-12 h-12 bg-forest text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-lg group-hover:bg-leaf transition-colors">1</div>
+                    <h3 className="text-xl font-heading font-bold text-forest mt-4 mb-3">Tu Donezi Online</h3>
+                    <p className="text-slate-600">Cumperi produse virtuale de pe site-ul nostru. Banii tăi se transformă direct în stoc real de marfă.</p>
+                </div>
             </div>
+
              {/* Step 2 */}
-             <div className="bg-paper p-8 rounded-2xl shadow-sm border border-slate-100 relative group hover:-translate-y-2 transition duration-300">
-              <div className="absolute -top-6 left-8 w-12 h-12 bg-forest text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-lg group-hover:bg-leaf transition-colors">2</div>
-              <h3 className="text-xl font-heading font-bold text-forest mt-4 mb-3">Noi Aprovizionăm</h3>
-              <p className="text-slate-600">Ducem alimente, rechizite și dulciuri în satele uitate de lume, aranjând totul ca într-un magazin adevărat.</p>
+             <div className="bg-paper p-0 rounded-2xl shadow-sm border border-slate-100 relative group hover:-translate-y-2 transition duration-300 overflow-hidden">
+                {/* INSTRUCTIUNI POZA PAS 2 (Duba/Transport): salveaza ca 'step-2.jpg' */}
+                <div className="h-48 bg-slate-200 w-full relative">
+                    {/* <img src="/step-2.jpg" className="w-full h-full object-cover" /> */}
+                    <div className="absolute inset-0 flex items-center justify-center text-slate-400 text-xs">IMG: step-2.jpg</div>
+                </div>
+                <div className="p-8 relative">
+                    <div className="absolute -top-6 left-8 w-12 h-12 bg-forest text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-lg group-hover:bg-leaf transition-colors">2</div>
+                    <h3 className="text-xl font-heading font-bold text-forest mt-4 mb-3">Noi Aprovizionăm</h3>
+                    <p className="text-slate-600">Ducem alimente, rechizite și dulciuri în satele uitate de lume, aranjând totul ca într-un magazin adevărat.</p>
+                </div>
             </div>
+
              {/* Step 3 */}
-             <div className="bg-paper p-8 rounded-2xl shadow-sm border border-slate-100 relative group hover:-translate-y-2 transition duration-300">
-              <div className="absolute -top-6 left-8 w-12 h-12 bg-forest text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-lg group-hover:bg-leaf transition-colors">3</div>
-              <h3 className="text-xl font-heading font-bold text-forest mt-4 mb-3">Ei Plătesc cu Frunze</h3>
-              <p className="text-slate-600">Copiii vin la magazin și "cumpără" ce au nevoie folosind frunze. Păstrăm demnitatea și bucuria jocului.</p>
+             <div className="bg-paper p-0 rounded-2xl shadow-sm border border-slate-100 relative group hover:-translate-y-2 transition duration-300 overflow-hidden">
+                {/* INSTRUCTIUNI POZA PAS 3 (Tranzactia/Maini): salveaza ca 'step-3.jpg' */}
+                <div className="h-48 bg-slate-200 w-full relative">
+                    {/* <img src="/step-3.jpg" className="w-full h-full object-cover" /> */}
+                    <div className="absolute inset-0 flex items-center justify-center text-slate-400 text-xs">IMG: step-3.jpg</div>
+                </div>
+                <div className="p-8 relative">
+                    <div className="absolute -top-6 left-8 w-12 h-12 bg-forest text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-lg group-hover:bg-leaf transition-colors">3</div>
+                    <h3 className="text-xl font-heading font-bold text-forest mt-4 mb-3">Ei Plătesc cu Frunze</h3>
+                    <p className="text-slate-600">Copiii vin la magazin și "cumpără" ce au nevoie folosind frunze. Păstrăm demnitatea și bucuria jocului.</p>
+                </div>
             </div>
           </div>
         </div>
