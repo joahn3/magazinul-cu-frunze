@@ -64,7 +64,7 @@ export default function Povestea() {
           <div className="relative">
              <div className="absolute inset-0 bg-gold/20 rounded-3xl transform rotate-3"></div>
              {/* INSTRUCTIUNI IMAGINE: Copil tinand o frunza la ochi (portrait) */}
-             <div className="relative bg-slate-200 rounded-3xl overflow-hidden aspect-4/5] shadow-xl">
+             <div className="relative bg-slate-200 rounded-3xl overflow-hidden aspect-[4/5] shadow-xl">
                 {/* UPDATED: Folosim Next.js Image component */}
                 <Image
                   src="/poveste-copil.jpg"

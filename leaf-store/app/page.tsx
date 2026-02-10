@@ -193,7 +193,7 @@ const LeafStore = () => {
                    1. Salveaza poza "portrait of village boy holding leaf" ca 'poveste-copil.jpg' in /public
                    2. Sterge div-ul placeholder si activeaza img-ul de mai jos:
                 */}
-                <div className="aspect-4/5] bg-slate-200 w-full object-cover relative group">
+                <div className="aspect-[4/5] bg-slate-200 w-full object-cover relative group">
                     {/* UPDATED: Folosim Next.js Image component cu fill */}
                     <Image
                       src="/poveste-copil.jpg"
