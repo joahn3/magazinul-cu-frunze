@@ -1,43 +1,12 @@
-// app/page.tsx
+// app/components/HomePage.tsx
+"use client";
 import React from 'react';
 import { ShoppingBag, ArrowRight, Target, Building2, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Metadata } from 'next';
 
-// 1. DEFINIREA METADATELOR (SEO & SOCIAL SHARE)
-export const metadata: Metadata = {
-  title: 'Magazinul cu Frunze - Unde faptele bune prind rădăcini',
-  description: 'Primul magazin social unde copiii din satele defavorizate plătesc cu frunze pentru alimente și rechizite. Donează și tu pentru a umple rafturile.',
-  openGraph: {
-    title: 'Magazinul cu Frunze',
-    description: 'Transformăm frunzele în monedă de schimb pentru copiii care au nevoie de noi.',
-    url: 'https://magazinulcufrunze.ro',
-    siteName: 'Magazinul cu Frunze',
-    images: [
-      {
-        url: '/og-image.jpg', // Trebuie sa ai o imagine 'og-image.jpg' (1200x630px) in folderul public
-        width: 1200,
-        height: 630,
-        alt: 'Copil cumparand cu o frunza',
-      },
-    ],
-    locale: 'ro_RO',
-    type: 'website',
-  },
-};
+const HomePage = () => {
 
-// 2. COMPONENTA PRINCIPALA (SERVER COMPONENT)
-export default function Page() {
-  return <LeafStoreClient />;
-}
-
-// 3. LOGICA DE CLIENT (Muta aici tot ce era inainte in LeafStore)
-// Nota: Deoarece folosim "use client" doar pe componentele care au nevoie (interactivitate),
-// in cazul acesta tot codul tau e static (doar link-uri), deci tehnic NU AI NEVOIE DE "use client".
-// Poti rula totul ca Server Component. Am scos "use client" de sus.
-
-const LeafStoreClient = () => {
   // Produsele disponibile pentru donație
   const products = [
     {
@@ -76,7 +45,7 @@ const LeafStoreClient = () => {
 
   // Configurare Obiectiv Pilot
   const targetAmount = 25000;
-  const currentAmount = 0;
+  const currentAmount = 0; // Aici vei actualiza suma manual sau prin API
   const progressPercent = Math.min((currentAmount / targetAmount) * 100, 100);
 
   return (
@@ -395,3 +364,5 @@ const LeafStoreClient = () => {
     </div>
   );
 };
+
+export default HomePage;
