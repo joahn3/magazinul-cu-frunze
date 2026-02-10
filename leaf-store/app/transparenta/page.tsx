@@ -1,5 +1,5 @@
 // app/transparenta/page.tsx
-import { FileText, TrendingUp, CheckCircle, ArrowRight } from 'lucide-react';
+import { FileText, TrendingUp, CheckCircle, Receipt, Image as ImageIcon, ShoppingCart, Truck } from 'lucide-react';
 
 export default function Transparency() {
   return (
@@ -49,6 +49,52 @@ export default function Transparency() {
         </div>
       </div>
 
+      {/* NOU: Standardul de Transparență (Checklist) */}
+      <div className="mb-16">
+        <h2 className="text-2xl md:text-3xl font-heading font-bold text-forest text-center mb-10">
+          Ce publicăm în fiecare lună?
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            {/* Item 1 */}
+            <div className="bg-white p-6 rounded-2xl border border-slate-100 hover:border-leaf/30 transition shadow-sm group">
+                <div className="bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center text-blue-600 mb-4 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    <Receipt size={24} />
+                </div>
+                <h4 className="font-heading font-bold text-lg text-forest mb-2">Facturi & Bonuri</h4>
+                <p className="text-sm text-slate-600">Scanări complete după documentele fiscale de la Metro/Selgros. Nimic ascuns.</p>
+            </div>
+
+            {/* Item 2 */}
+            <div className="bg-white p-6 rounded-2xl border border-slate-100 hover:border-leaf/30 transition shadow-sm group">
+                <div className="bg-yellow-50 w-12 h-12 rounded-xl flex items-center justify-center text-earth mb-4 group-hover:bg-gold group-hover:text-white transition-colors">
+                    <ImageIcon size={24} />
+                </div>
+                <h4 className="font-heading font-bold text-lg text-forest mb-2">Dovezi Foto</h4>
+                <p className="text-sm text-slate-600">Poze reale cu marfa cumpărată, încărcată în mașină și așezată pe rafturile din sat.</p>
+            </div>
+
+            {/* Item 3 */}
+            <div className="bg-white p-6 rounded-2xl border border-slate-100 hover:border-leaf/30 transition shadow-sm group">
+                <div className="bg-green-50 w-12 h-12 rounded-xl flex items-center justify-center text-forest mb-4 group-hover:bg-forest group-hover:text-white transition-colors">
+                    <ShoppingCart size={24} />
+                </div>
+                <h4 className="font-heading font-bold text-lg text-forest mb-2">Listă Achiziții</h4>
+                <p className="text-sm text-slate-600">Detaliere exactă: câți litri de ulei, câte caiete și câte ciocolate s-au cumpărat.</p>
+            </div>
+
+            {/* Item 4 */}
+            <div className="bg-white p-6 rounded-2xl border border-slate-100 hover:border-leaf/30 transition shadow-sm group">
+                <div className="bg-slate-100 w-12 h-12 rounded-xl flex items-center justify-center text-slate-600 mb-4 group-hover:bg-slate-800 group-hover:text-white transition-colors">
+                    <Truck size={24} />
+                </div>
+                <h4 className="font-heading font-bold text-lg text-forest mb-2">Raport Logistic</h4>
+                <p className="text-sm text-slate-600">Costurile de transport (combustibil) pentru a duce marfa la destinație.</p>
+            </div>
+
+        </div>
+      </div>
+
       {/* Jurnal de Bord (Reports Section) */}
       <div className="bg-white rounded-3xl p-8 md:p-12 border border-slate-100 shadow-xl shadow-forest/5">
         <div className="flex items-center gap-3 mb-8">
@@ -72,17 +118,11 @@ export default function Transparency() {
                     În Lucru
                 </span>
             </div>
-            
-            {/* Placeholder message if empty */}
-            {/* <div className="text-center py-12 text-slate-400">
-                <p>Încă nu există rapoarte încărcate.</p>
-            </div> 
-            */}
         </div>
 
         <div className="mt-12 bg-forest/5 rounded-2xl p-6 text-center border border-forest/10">
             <p className="text-slate-600 text-sm md:text-base font-medium">
-                Primul raport financiar detaliat va fi disponibil publicului după prima lună completă de activitate a magazinului pilot.
+                Suntem pregătiți să publicăm toate documentele de mai sus (facturi, poze, rapoarte) imediat după prima acțiune din teren.
             </p>
         </div>
       </div>
